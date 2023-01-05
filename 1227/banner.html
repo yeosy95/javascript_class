@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수를 활용하여 배너구현하기</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <style>
+    .banner{
+      width: 500px;
+      border:solid 2px #000;
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+    .banner *{margin:0px;padding: 0px;}
+    .banner img{width: 100%;}
+    .banner i.fas{
+      position: absolute;
+      top:35%;
+      font-size: 30px;
+      color:#fff;
+      background: rgba(0,0,0,.7);
+      padding:10px;
+    }
+    .banner i.fa-angle-left{left: 0px;}
+    .banner i.fa-angle-right{right: 0px;}
+    #page{
+      position:absolute;
+      right: 0px;bottom: 0px;
+      background: rgb(0, 0, 0,.7);
+      padding:0px 10px;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <h2>함수를 활용한 배너구현</h2>
+  <dl>
+    <dt>banner영역을 만들고 이미지 태그요소를 사용하여 첫번째 이미지를 삽입</dt>
+    <dd>아이콘 폰트를 사용하여 좌,우 끝에 방향표시 버튼을 삽입</dd>
+    <dd>자바스크립트에서nextimg,prevImg함수를 각각 작성하여 총 이미지개수 4장을 초과하지 않게 조건식 작성</dd>
+    <dd>좌,우버튼에 이벤트를 사용 - 각각 클릭하면 해당 함수가 호출되게하고 이미지,해당번호가 표시되게한다.</dd>
+  </dl>
+  
+  <div class="banner">
+    <img src="./images/banner01.jpg" alt="배너" id="banner">
+    <i class="fas fa-angle-left" onclick="prevImg();"></i>
+    <i class="fas fa-angle-right" onclick="nextImg();"></i>
+    <span id="page">&nbsp;</span>
+  </div>
+  <script>
+    //변수선언
+    let n = 1;
+    document.getElementById('page').innerHTML=n+'/4';
+    //함수작성하기
+    function nextImg(){//1,2,3,4
+      // alert('다음이미지');
+      if(n==4){
+        n = 1;
+      }else{
+        n++;
+      }
+      console.log(n);
+      document.getElementById('banner').src='./images/banner0'+n+'.jpg';
+      document.getElementById('page').innerHTML=n+'/4';
+    }
+    function prevImg(){//1,4,3,2,1
+      // alert('이전이미지');
+      if(n==1){
+        n = 4;
+      }else{
+        n--;
+      }
+      console.log(n);
+      document.getElementById('page').innerHTML=n+'/4';
+    }
+
+    //시간객체를 사용하여 매 초마다 반복실행하기
+    //setInterval(함수명, 반복시간);
+    let Timer = setInterval(nextImg, 3000);
+  </script>
+</body>
+</html>

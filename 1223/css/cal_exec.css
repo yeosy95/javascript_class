@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+input[type=text]{
+  width: 229px;
+  height:30px;
+  font-size: 1rem;
+  color:#777;
+  text-align: right;
+}
+
+.btn_box{
+  padding-left:13px;
+  width:220px;
+  height: 280px;
+  border: solid 2px rgba(207, 100, 255, 0.8);
+  background: rgba(207, 139, 255, 0.8);
+}
+div p input{
+  margin:0 auto;
+}
+.operator{
+  width: 40px;
+  height: 40px;
+  color:#fff;
+  font-size: 1.5rem;
+  background: rgba(150, 100, 150, 10);
+  
+}
+.btn{
+  width:50px;
+  height: 40px;
+  color:#fff;
+  border-color: rgba(207, 100, 255, 0.8);
+  background: rgba(200, 50, 200, 10);
+  font-size: 1rem;
+}

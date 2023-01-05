@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습예제01</title>
+  <style>
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    section{
+      position: relative;
+    }
+    
+    ul,li{
+      display: flex;
+      list-style: none;
+    }
+    li{
+      margin-right: 5px;
+      width:12%;
+    }
+    li img{
+      width:100%;
+      box-sizing: border-box;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h2>자바스크립트 문서객체모델_속성값을 활용한 상품 미리보기 콘텐츠</h2>
+  <p>이미지 5장을 사용하여 썸네일 이미지를 클릭시 큰사진이 보이게하기</p>
+
+  <section class="product">
+    <article class="photo">
+      <img src="./images2/photo01.jpg" alt="미리보기" id="big_img">
+      <!-- 썸네일 클릭시 해당 속성 src값을 변수에 담아서 출력 -->
+      <ul>
+        <li><img src="./images2/photo01.jpg" alt="썸네일" class="thum_img"></li>
+        <li><img src="./images2/photo02.jpg" alt="썸네일" class="thum_img"></li>
+        <li><img src="./images2/photo03.jpg" alt="썸네일" class="thum_img"></li>
+        <li><img src="./images2/photo04.jpg" alt="썸네일" class="thum_img"></li>
+        <li><img src="./images2/photo05.jpg" alt="썸네일" class="thum_img"></li>
+
+      </ul>
+    </article>
+
+    <article>
+      <h3><span>오늘마감</span>
+        <p>[최대 40%쿠폰] 머렐 헤비다운 외 스포츠 특가</p>
+      </h3>
+      <p><span>10%</span>151,200원~ <a href="#none" title="혜택보기">혜택보기</a></p>
+      <p><a href="#none" title="구매전 적릭금">구매 전 적립금 5,000원 받기</a>
+      <a href="#none" title="카드무이자">카드 무이자 혜택보기(최대6개월)</a></p>
+    </article>
+  </section>
+  <script>
+    
+    let big_img = document.getElementById('big_img');
+    let thum_img = document.getElementsByClassName('thum_img');  
+    
+    for(let i = 0; i < thum_img.length; i++){
+      thum_img[i].addEventListener("click", changepic);
+    }
+    
+    function changepic(){
+      let small_img = this.getAttribute('src');
+      big_img.setAttribute('src',small_img);
+      
+      for(let j = 0; j < thum_img.length; j++){
+        thum_img[j].style.border='none';
+        this.style.border='1px solid #f00';
+      }
+    }
+    // //큰사진 변수에 저장
+    // let photo = document.querySelector('#big_img');
+    // let s_img = document.querySelectorAll('.thum_img');
+
+    // for(let i = 0; i < s_img.length; i++){
+    //   //변수i초기값0으로 .small개수만큼 반복실행 i++ 1씩 증가 
+    //   s_img[i].addEventListener('click',changePic);
+    //   // s_img[i].addEventListener("click",function(){
+    //     //   let new_img = this.src;
+    //     //   photo.setAttribute('src',new_img);
+    //     // });
+    //   }
+
+    //   function changePic(){
+    //     let newPic = this.src; //사용자가 선택한 이미지 속성을 변수에 저장.
+    //     photo.setAttribute('src',newPic);
+
+    //     for(let j = 0; j < small_img.length; j++){
+    //     small_img[j].style.border='none';
+    //     this.style.border='1px solid #f00';
+    //   }
+    // }
+      
+  </script>
+  
+</body>
+</html>

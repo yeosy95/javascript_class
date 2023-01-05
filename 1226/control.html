@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01제어문(1_조건문) p.481</title>
+ b
+  <style>
+    span{color:#f00; font-size: 30px;}
+    article{
+      width:400px;
+      height: 730px;
+      border:solid 5px #fff;
+      box-shadow: 0px 0px 6px #333;
+      text-align: right;
+    }
+    i.fas{
+      padding:4px 8px;
+      border:1px solid #333;
+      cursor: pointer;
+    }
+    #page{
+      padding:10px 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>01제어문(1_조건문) p.481</h2>
+  <p>제어문이란? 프로그램의 실행을 제어(control)하기위해 사용하는 실행문으로서,<br>
+    1.조건문(if, else, if else)<br>
+    2.선택문(switch case)<br>
+    3.반복문(while, do while, for)
+  </p>
+  
+  <h3>1.조건문 - if, else, else if</h3>
+  <ul>
+    <li>if문 : 조건식에 만족하면 실행되는 조건문</li>
+    <li>if else문 : 조건식에 만족하면 true(합격),false(불합격)값이 출력되는 조건문.</li>
+    <li>if else if문 : 조건식이 여러개일 경우 다양한 결과 값을 얻기위한 조건문</li>
+  </ul>
+
+  <article>
+    <h2>교보문고 책이미지 콘텐츠 구현하기</h2>
+    <p>좌, 우측방향 버튼을 클릭시 숫자 증가/감소 기능 만들기</p>
+    <p>변수값이 변경될 때 이미지 파일도 같이 변경되게 변수를 파일명에 대입</p>
+
+    <span id="page">&nbsp;</span>
+      <i class="fas fa-angle-left" onclick="minus()"></i>
+      <i class="fas fa-angle-right" onclick="plus()"></i>
+    <div>
+      <img src="./images/book1.jpg" alt="책" id="book">
+    </div>
+  </article>
+  <script src="./js/control.js"></script>
+
+  
+</body>
+</html>
