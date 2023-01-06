@@ -15,7 +15,10 @@ function imgChange(){
   let url = this.src;//이미지 전체 경로
   
   let big_url = '/images/img_main_banner_160110.jpg';
+
+  // 선택한 주소의 문자를 기본문자열과 대체하여 다시 url저장
   url = url.replace(big_url, url);
+  
   //변경된 값을 이미지 속성 src에 대입하여 변경
   document.getElementById('img_box').src = url;
 

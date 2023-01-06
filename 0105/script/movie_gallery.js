@@ -25,7 +25,7 @@ left_btn.addEventListener('click',function(){
   }
   console.log(n);
   document.getElementById('page').innerHTML=n + ' / 16';
-  document.getElementById('photo').src='./images/movie_image'+n+'.jpg';
+  document.getElementById('photo').src='./images/movie_image'+ n +'.jpg';
 
 });
 right_btn.addEventListener('click',function(){

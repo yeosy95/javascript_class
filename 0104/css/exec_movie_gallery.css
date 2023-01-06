@@ -1,0 +1,69 @@
+@charset "utf-8";
+*{margin:0px; padding:0px;}
+ul,li{list-style: none;}
+h2{padding:30px; text-align: center;}
+img{width:300px;}
+.gallery{
+  display: flex;
+  width: 450px;
+  height:430px;
+  border:solid 1px rgb(187, 178, 178);
+  margin:0 auto;
+  overflow: hidden;
+  box-shadow: 1px 2px 3px rgba(133, 75, 75, 0.7);
+}
+.gallery > .g_list{
+  overflow: scroll;
+}
+
+
+.lnb >li{
+  width:100px;
+  margin-left: 20px;
+}
+.lnb li > img{
+  width: 100%;
+  margin:-25px; 
+}
+
+#big_img{
+  position:relative;
+  width:100%;
+}
+#big_img i.fas{
+  position: absolute;
+  top:45%;
+  color:#fff;
+  background: rgba(243, 58, 58, 0.7);
+  padding:6px 10px;
+  cursor: pointer;
+}
+i.fa-angle-left{left:0px;}
+i.fa-angle-right{right:50px}
+
+#paging{
+  position:absolute;
+  right:50px; bottom:0px;
+  color:#fff;
+  padding:8px 6px;
+  background: rgba(0,0,0,.7);
+}
+
+/* 스크롤바 서식 */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(180, 47, 47);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(190, 80, 80);
+}
